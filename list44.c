@@ -3,7 +3,8 @@
 int eval(int a);
 
 int main(void) {
-  int i, score[SIZE], max = score[0];
+  int i, score[SIZE];
+  double total_score=0;
   for (i = 0; i < SIZE; i++) {
     score[i] = (i * 83 + 11) % 101;
   }
@@ -19,6 +20,11 @@ int main(void) {
   }
   printf("\n");
 
+  for(i = 0; i < SIZE; i++){
+      total_score += eval(score[i]);
+  }
+  printf("Average score is %.2f.\n", total_score/20);
+  
   return 0;
 }
 
